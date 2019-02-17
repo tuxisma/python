@@ -1,4 +1,4 @@
 # python
 
 
-This is a good start for sharing some tips about python 
+This is a good start for sharing some script about python 
