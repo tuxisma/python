@@ -1,0 +1,56 @@
+Hi Ismael,
+ 
+Looks good. Make sure transport is default to o365. --------------- DONE
+ 
+If you feel up to it, you can create a new route that can take the template name as a URL parameter (not in the payload).
+ 
+I did something very similar with a mock service I wrote recently. The service has a single “job” route, but the job name is dynamic. Another problem to solve is validation. Look how I did that by having a base cerberus schema that all jobs share, then additional requirements per job. Those additional requirements are determined based on the job name. You can do the same thing based on template name.
+ 
+https://git.illumina.com/gist/vwilson/b8e05bf664164f23093deb7b97b96ff4
+ 
+Line 18 - Job param map
+Line 83 - Route job name param
+
+template_name:
+-automation
+-gis.service.degradation
+-gis.service.disruption
+-gis.service.restorsation
+
+gis.service.degradation
+{{ title }}
+{{ services_affected }}
+{{ impacted_sites }}
+{{ impacted_staff }}
+{{ action_required }}
+{{ background_details }}
+{{ for_questions }}
+
+gis.service.disruption
+{{ title }}
+{{ services_affected }} 
+{{ impacted_sites }}
+{{ impacted_staff }}
+{{ action_required }}
+{{ background_details }}
+{{ for_questions }}
+
+gis.service.restoration
+{{ title }}
+{{ services_restored }} 
+{{ impacted_sites }}
+{{ impacted_staff }}
+{{ action_required }}
+{{ backgroung_details }}
+{{ for_questions }}
+
+RD_OPTION 'date' is in Rundeck, why ?
+RD_OPTION 'host' is in Rundeck, why ?
+
+
+
+"from": "svc_iron_emailer_aad@ilmn.onmicrosoft.com",
+"subject": "Test emailer O365",
+"to": ["igarcia@illumina.com"],
+"cc": [],
+"body": "Your server is down.  Please contact support."

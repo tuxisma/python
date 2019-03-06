@@ -1,0 +1,5 @@
+PUT sirve para crear un item en el caso de que no exista, de lo contrario si existe va a actualizar alguna propiedad de ese item.
+
+
+si quiero actualizar el precio del articulo llamado frijol, voy a usar put, si frijol ya existe solo actualiza el precio, si no existe crea
+el producto llamado frijol junto con el precio.
