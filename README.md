@@ -8,3 +8,4 @@ This line is added from masterbranch
 
 
 This the line from my feature branch
+This is another line in the README from the feature branch.
